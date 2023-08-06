@@ -53,3 +53,25 @@ def valid(board, num, pos):
                 return False
     
     return True
+
+# Solves the board using backtracking
+def solve(board):
+    emptySpotAvailable = find_empty(board)
+    if not emptySpotAvailable:
+        return True
+    else:
+        row, col = emptySpotAvailable
+    
+    for i in range(1,10):
+        if (valid(board, i, (row, col))):
+            # Explore a valid path
+            board[row][col] = i
+
+            # Recursively call solve - if this path is valid, return true
+            if solve(board):
+                return True
+            
+            # Reset to 0
+            board[row][col] = 0
+    
+    return False
