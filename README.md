@@ -1,2 +1,2 @@
 # SudokuSolver
-Checks if a sudoku is valid
+This Sudoku solver tutorial uses python and the backtracking algorithm to find a solution to any solvable sudoku board
